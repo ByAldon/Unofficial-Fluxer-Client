@@ -34,6 +34,14 @@ An enhanced, community-driven desktop experience for Fluxer. This client brings 
 2. Run the `Unofficial-Fluxer-Client-Setup.exe` file.
 3. Run the installer, accept the terms, and follow the instructions.
 
+---
+
+<img width="276" height="145" alt="b3012db0-7054-4883-a898-1553d9e2efd9" src="https://github.com/user-attachments/assets/c4f92fae-3f5c-4b98-af30-1ea2c60f6293" />
+
+Let's have a chat on my Fluxer Server! [https://fluxer.gg/UPI0Q0rO](https://fluxer.gg/UPI0Q0rO)
+
+---
+
 ### For Developers
 If you want to build the project yourself or contribute:
 
