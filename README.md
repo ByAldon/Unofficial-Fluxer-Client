@@ -8,9 +8,10 @@
 
 An enhanced, community-driven desktop experience for Fluxer. This client brings the power of the web app into a dedicated, high-performance Windows environment with native desktop features.
 
-<img width="1285" height="908" alt="ufcdemo" src="https://github.com/user-attachments/assets/e1f3f663-28a0-4a84-aafe-d123c17ea033" />
+<img width="1700" height="1054" alt="ufcdemo" src="https://github.com/user-attachments/assets/bd9e4002-c1b8-4b24-a14f-54a631a39b9f" />
 
 ---
+
 
 ## ✨ Key Features
 
