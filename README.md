@@ -23,7 +23,7 @@ An enhanced, community-driven desktop experience for Fluxer. This client brings 
 
 ### For Users
 1. Go to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) page (or check the `Download` folder).
-2. Download the latest `Download/Unofficial-Fluxer-Client-Setup.exe`.
+2. Download the latest `Unofficial-Fluxer-Client-Setup.exe`.
 3. Run the installer, accept the terms, and follow the instructions.
 
 ### For Developers
