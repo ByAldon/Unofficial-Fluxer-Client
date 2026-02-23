@@ -4,6 +4,8 @@
 ![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)
 ![Built with: Electron](https://img.shields.io/badge/Built%20with-Electron-47848F.svg)
 
+[![Download Unofficial Fluxer](https://img.shields.io/badge/Download-Latest%20Version-brightgreen?style=for-the-badge&logo=windows)](https://github.com/ByAldon/Unofficial-Fluxer-Client/raw/main/Download/Unofficial-Fluxer-Client-Setup.exe)
+
 An enhanced, community-driven desktop experience for Fluxer. This client brings the power of the web app into a dedicated, high-performance Windows environment with native desktop features.
 
 ---
@@ -22,8 +24,8 @@ An enhanced, community-driven desktop experience for Fluxer. This client brings 
 ## 🚀 Getting Started
 
 ### For Users
-1. Go to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) page (or check the `Download` folder).
-2. Download the latest `Unofficial-Fluxer-Client-Setup.exe`.
+1. Click the **Download** button above.
+2. Run the `Unofficial-Fluxer-Client-Setup.exe` file.
 3. Run the installer, accept the terms, and follow the instructions.
 
 ### For Developers
@@ -31,5 +33,5 @@ If you want to build the project yourself or contribute:
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/ByAldon/unofficial-fluxer-client.git](https://github.com/ByAldon/unofficial-fluxer-client.git)
-cd unofficial-fluxer-client
+git clone [https://github.com/ByAldon/Unofficial-Fluxer-Client.git](https://github.com/ByAldon/Unofficial-Fluxer-Client.git)
+cd Unofficial-Fluxer-Client
