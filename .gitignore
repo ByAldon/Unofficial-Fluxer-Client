@@ -15,8 +15,8 @@ jspm_packages/
 .npm
 
 # Electron Builder / Forge Output
-dist/
 out/
+dist/
 make/
 
 # OS generated files
