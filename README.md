@@ -8,7 +8,7 @@
 
 An enhanced, community-driven desktop experience for Fluxer. This client brings the power of the web app into a dedicated, high-performance Windows environment with native desktop features.
 
-<img width="1700" height="1054" alt="ufcdemo" src="https://github.com/user-attachments/assets/bd9e4002-c1b8-4b24-a14f-54a631a39b9f" />
+<img width="1451" height="907" alt="ufcdemo-1" src="https://github.com/user-attachments/assets/88712766-8269-4c85-be82-981265ab3fba" />
 <img width="490" height="216" alt="ufcdemo2" src="https://github.com/user-attachments/assets/91df93cc-cbe4-43b1-977b-024afe7183a0" />
 <img width="468" height="318" alt="ufcdemo3" src="https://github.com/user-attachments/assets/29d8cbae-8b46-4ba9-b33d-1cc71f18885f" />
 
@@ -33,6 +33,14 @@ An enhanced, community-driven desktop experience for Fluxer. This client brings 
 1. Click the **Download** button above.
 2. Run the `Unofficial-Fluxer-Client-Setup.exe` file.
 3. Run the installer, accept the terms, and follow the instructions.
+
+---
+
+<img width="276" height="145" alt="b3012db0-7054-4883-a898-1553d9e2efd9" src="https://github.com/user-attachments/assets/c4f92fae-3f5c-4b98-af30-1ea2c60f6293" />
+
+Let's have a chat on my Fluxer Server! [https://fluxer.gg/3zlKqR5T](https://fluxer.gg/3zlKqR5T)
+
+---
 
 ### For Developers
 If you want to build the project yourself or contribute:
