@@ -38,7 +38,7 @@ An enhanced, community-driven desktop experience for Fluxer. This client brings 
 
 <img width="276" height="145" alt="b3012db0-7054-4883-a898-1553d9e2efd9" src="https://github.com/user-attachments/assets/c4f92fae-3f5c-4b98-af30-1ea2c60f6293" />
 
-Let's have a chat on my Fluxer Server! [https://fluxer.gg/UPI0Q0rO](https://fluxer.gg/UPI0Q0rO)
+Let's have a chat on my Fluxer Server! [https://fluxer.gg/3zlKqR5T](https://fluxer.gg/3zlKqR5T)
 
 ---
 
