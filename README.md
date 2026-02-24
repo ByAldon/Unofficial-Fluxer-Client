@@ -1,45 +1,36 @@
-# 🛸 Unofficial Fluxer Client
+# Unofficial Fluxer Client
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue.svg)
-![Built with: Electron](https://img.shields.io/badge/Built%20with-Electron-47848F.svg)
+An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows.
 
-[![Download Unofficial Fluxer](https://img.shields.io/badge/Download-Latest%20Version-brightgreen?style=for-the-badge&logo=windows)](https://github.com/ByAldon/Unofficial-Fluxer-Client/raw/main/Download/Unofficial-Fluxer-Client-Setup.exe)
+## 🚀 Version 1.4.4 Highlights
 
-An enhanced, community-driven desktop experience for Fluxer. This client brings the power of the web app into a dedicated, high-performance Windows environment with native desktop features.
+Since the initial release, the client has evolved from a simple wrapper to a refined desktop application:
 
-<img width="1451" height="907" alt="ufcdemo-1" src="https://github.com/user-attachments/assets/88712766-8269-4c85-be82-981265ab3fba" />
-<img width="490" height="216" alt="ufcdemo2" src="https://github.com/user-attachments/assets/91df93cc-cbe4-43b1-977b-024afe7183a0" />
-<img width="468" height="318" alt="ufcdemo3" src="https://github.com/user-attachments/assets/29d8cbae-8b46-4ba9-b33d-1cc71f18885f" />
+- **🔄 Intelligent Update System**: Automatically checks for the latest releases on startup. Direct download links are provided in notifications for a seamless upgrade experience [cite: 2026-02-23].
+- **🔇 Silent Experience**: All intrusive Windows alert sounds ("dings") have been removed from notifications and dialogs to ensure a focused, non-disruptive environment [cite: 2026-02-23].
+- **📐 Optimized Workspace**: The default window resolution is set to **1440x900**, providing the Fluxer UI with more breathing room and significantly reducing unnecessary scrollbars.
+- **🛠️ Network & Cache Tools**: 
+    - **Smart Refresh**: A dedicated network-refresh button is integrated into the UI (bottom-right) to resolve loading issues instantly without restarting the app.
+    - **Tray Integration**: Access "Clear Cache & Reload" directly from the system tray for deep troubleshooting.
+- **🛡️ Enhanced Navigation**: External links are automatically intercepted and opened in your default system browser to keep your session secure and focused.
+- **🧼 Deep Cleanup Policy**: The uninstaller is optimized to purge all local site data, caches, and application-specific registry entries from `%AppData%` upon removal [cite: 2026-02-23].
 
+## 📥 Installation
 
----
+1. Navigate to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) section.
+2. Download the latest **`Unofficial-Fluxer-Client-Setup.exe`**.
+3. Run the installer. If a previous version exists, it will perform a clean update automatically.
 
+## ⌨️ Development & Build
 
-## ✨ Key Features
+If you want to build the project yourself:
 
-* **📦 Professional Installer**: A dedicated Windows setup wizard that allows for custom installation directories and progress tracking.
-* **🛡️ Secure Agreement**: Includes an integrated EULA with a mandatory checkbox to ensure all users agree to the terms before installation.
-* **📥 System Tray Support**: Minimize the app to your system tray to keep your workspace clean. Includes a right-click menu for quick actions.
-* **🧹 Cache Management**: Easily clear your cache and reload the app directly from the tray menu to ensure you always have the latest version of Fluxer.
-* **🚀 Native Feel**: Features a custom title bar style and a dark background that matches the Fluxer aesthetic perfectly.
-* **🔓 Open Source**: Distributed under the MIT License—feel free to use, modify, or contribute to the project.
-
----
-
-## 🚀 Getting Started
-
-### For Users
-1. Click the **Download** button above.
-2. Run the `Unofficial-Fluxer-Client-Setup.exe` file.
-3. Run the installer, accept the terms, and follow the instructions.
-
----
-
-### For Developers
-If you want to build the project yourself or contribute:
-
-**1. Clone the repository**
 ```bash
-git clone [https://github.com/ByAldon/Unofficial-Fluxer-Client.git](https://github.com/ByAldon/Unofficial-Fluxer-Client.git)
-cd Unofficial-Fluxer-Client
+# Install dependencies
+npm install
+
+# Run the app in development mode
+npm start
+
+# Build the Windows installer (dist/ folder)
+npm run build

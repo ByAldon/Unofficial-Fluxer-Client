@@ -1,34 +1,31 @@
 # Technical Details & Transparency Report
 
-This document provides a comprehensive overview of the architecture, security protocols, and maintenance logic implemented in the Unofficial Fluxer Client. Our mission is to provide a superior desktop experience for Fluxer while remaining 100% transparent about our code [cite: 2026-02-23].
+This document provides a detailed overview of the technical architecture, installation logic, and data handling of the Unofficial Fluxer Client.
 
-## 🏗️ Core Architecture
-The application is built using **Electron**, an open-source framework that allows us to wrap the official Fluxer web interface into a dedicated, high-performance desktop container.
+## 📦 Installer Logic & Stability (v1.4.4)
 
-### 1. Main Process (`main.js`)
-The main process acts as the application's "brain" and security gatekeeper:
-* **Navigation Hardening**: We use the **WHATWG URL API** to sanitize and validate every navigation request. This resolves security vulnerabilities found in legacy Node.js methods.
-* **Domain Whitelisting**: The application strictly enforces a whitelist. Only `*.fluxer.app` domains are permitted to load internally. All external links are automatically pushed to the user's default system browser to prevent phishing [cite: 2026-02-23].
-* **Process Sandboxing**: The renderer process is fully sandboxed, meaning the website has no direct access to the local file system or hardware [cite: 2026-02-23].
-* **System Maintenance**: To ensure session stability, the app monitors system idle time. After 600 seconds (10 minutes) of inactivity, it performs an automated cache clear and page refresh [cite: 2026-02-22, 2026-02-23].
+- **Native Architecture**: The installer utilizes the NSIS (Nullsoft Scriptable Install System) engine via Electron-Builder to ensure maximum compatibility with the Windows operating system [cite: 2026-02-23].
+- **Clean Update Path**: To ensure stability, the installer is configured to perform a clean update when a previous version is detected, preventing version conflicts and stale cache issues.
+- **Silent UI Policy**: All informational and update-related dialog boxes are configured with `type: 'none'` to bypass the default Windows system sounds, providing a silent user experience [cite: 2026-02-23].
 
-### 2. Preload Script (`preload.js`)
-The preload script facilitates secure communication between the web content and the desktop app:
-* **Context Isolation**: This script runs in a separate JavaScript context, ensuring the website's code cannot interfere with the application's internal functions [cite: 2026-02-23].
-* **UI Injection**: It safely injects the "Network Issue" button. This button allows users to manually clear the cache and trigger a hard refresh if they encounter network resets (e.g., `net_error -101`).
-* **IPC Communication**: We use Inter-Process Communication (IPC) to send requests from the UI to the main process without exposing sensitive Node.js APIs to the web environment [cite: 2026-02-23].
+## 🎨 UI & User Experience Enhancements
 
-## 🔒 Security Hardening
-* **`nodeIntegration: false`**: This is disabled to prevent the website from executing local system commands.
-* **`sandbox: true`**: Provides an additional layer of protection by isolating the browser environment [cite: 2026-02-23].
-* **Permission Blocker**: The app explicitly blocks unauthorized requests for camera, microphone, and location from non-whitelisted domains [cite: 2026-02-23].
+- **Smart Refresh Integration**: A custom "Hard Refresh" button is injected via `preload.js`, communicating with the main process through Electron's `ipcMain/ipcRenderer` to trigger a full cache purge and reload [cite: 2026-02-23].
+- **Anti-Overlap Positioning**: The UI elements are positioned at `bottom: 20px` and `right: 20px` to avoid interference with native Fluxer web notifications and navigation elements [cite: 2026-02-23].
+- **External Link Handling**: A security layer monitors `will-navigate` events. Any request to a non-Fluxer domain is intercepted and redirected to the system's default web browser for security [cite: 2026-02-23].
 
-## 📦 Smart Installer & "Clean Slate" Policy
-We use the NSIS framework to manage the application lifecycle and respect user privacy:
-* **Dual-Registry Detection**: The installer scans both `HKCU` (User) and `HKLM` (System) registers to find previous installations using the `UNINSTALL_APP_KEY`.
-* **Forced Clean Update**: When a previous version is detected, the installer prompts for a "Clean Update." This silently executes the old uninstaller to remove legacy files before installing new ones, preventing file corruption and version conflicts [cite: 2026-02-23].
-* **Total Purge**: Upon uninstallation, the app wipes all session data in `%AppData%\unofficial-fluxer-client` and local registry keys under `HKCU\Software\unofficial-fluxer-client` [cite: 2026-02-23].
-* **OS Log Handling**: Please note that Windows-managed logs like 'Prefetch' and 'AppCompatFlags' are controlled by the operating system for optimization and may be visible in deep-cleaning tools like Revo Uninstaller [cite: 2026-02-23].
+## 🧼 Residual File Policy & System Integrity
 
-## 🛠️ Compliance
-* **SemVer Standard**: The project strictly follows Semantic Versioning (Major.Minor.Patch) to ensure compatibility with modern build pipelines.
+- **Aggressive Data Purge**: Upon uninstallation, the application is programmed to remove all user-specific site data, local storage, and cached files located in `%AppData%\unofficial-fluxer-client` [cite: 2026-02-23].
+- **System-Managed Files**: Users may notice residual entries in advanced tools like Revo Uninstaller [cite: 2026-02-23]:
+    - **AppCompatFlags**: These registry keys are created and managed by the Windows OS for compatibility tracking and are not under the app's direct control.
+    - **Prefetch (.pf) Files**: These are Windows-generated optimization files used to speed up application launch times.
+    - **System Integrity**: This application does not attempt to modify these OS-level files to ensure the overall stability of the host Windows environment [cite: 2026-02-23].
+
+## 🔄 Update Mechanism
+
+- **GitHub API Integration**: The client performs a secure, asynchronous check against the GitHub Releases API on startup [cite: 2026-02-23].
+- **Manual Verification**: Users can trigger a manual update check through the 'About' menu, which provides a direct link to the latest assets on the official repository.
+
+---
+*Technical Transparency Report - Unofficial Fluxer Client Project*
