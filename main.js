@@ -1,29 +1,54 @@
-const { app, BrowserWindow, Tray, Menu, session } = require('electron');
+const { app, BrowserWindow, Tray, Menu, session, dialog, net, shell, powerMonitor, ipcMain } = require('electron');
 const path = require('path');
 
 let mainWindow;
 let tray = null;
-let isQuitting = false;
+const currentVersion = '1.4.4'; 
+const appName = "Unofficial Fluxer Client";
+
+function performHardRefresh() {
+  if (mainWindow) {
+    session.defaultSession.clearCache().then(() => {
+      console.log('Hard refresh triggered.');
+      mainWindow.reload();
+    });
+  }
+}
+
+ipcMain.on('hard-refresh', () => { performHardRefresh(); });
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 900,
-    title: "Unofficial Fluxer Client", // De nieuwe naam
-    titleBarStyle: 'hiddenInset', 
-    backgroundColor: '#1e1e1e',
-    icon: path.join(__dirname, 'icon.png'),
+    width: 1440, height: 900, title: appName,
+    icon: path.join(__dirname, 'icon.png'), backgroundColor: '#1e1e1e',
+    autoHideMenuBar: true, 
     webPreferences: {
-      nodeIntegration: false,
-      contextIsolation: true,
-    },
+      nodeIntegration: false, contextIsolation: true, sandbox: true,
+      preload: path.join(__dirname, 'preload.js')
+    }
   });
 
-  mainWindow.loadURL('https://web.fluxer.app/channels/@me');
-  mainWindow.setMenuBarVisibility(false);
+  mainWindow.removeMenu();
+  
+  mainWindow.on('page-title-updated', (event) => {
+    event.preventDefault();
+    mainWindow.setTitle(appName); 
+  });
+
+  mainWindow.webContents.on('will-navigate', (event, url) => {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.hostname !== 'web.fluxer.app' && parsedUrl.hostname !== 'fluxer.app') {
+      event.preventDefault();
+      shell.openExternal(url);
+    }
+  });
+
+  session.defaultSession.clearCache().then(() => {
+    mainWindow.loadURL('https://web.fluxer.app/');
+  });
 
   mainWindow.on('close', (event) => {
-    if (!isQuitting) {
+    if (!app.isQuitting) {
       event.preventDefault();
       mainWindow.hide();
     }
@@ -31,37 +56,71 @@ function createWindow() {
   });
 }
 
-function createTray() {
-  const iconPath = path.join(__dirname, 'icon.png');
-  tray = new Tray(iconPath);
-  
-  const contextMenu = Menu.buildFromTemplate([
-    { label: 'Open Unofficial Fluxer', click: () => mainWindow.show() },
-    { 
-      label: 'Clear Cache & Reload', 
-      click: async () => { 
-        await session.defaultSession.clearCache(); 
-        mainWindow.reload(); 
-      } 
-    },
-    { type: 'separator' },
-    { label: 'Quit', click: () => {
-        isQuitting = true;
-        app.quit();
-      } 
-    }
-  ]);
-
-  tray.setToolTip('Unofficial Fluxer Client');
-  tray.setContextMenu(contextMenu);
-  tray.on('double-click', () => mainWindow.show());
+function checkUpdates(manual = false) {
+  const request = net.request('https://api.github.com/repos/ByAldon/Unofficial-Fluxer-Client/releases/latest');
+  request.on('response', (response) => {
+    let body = '';
+    response.on('data', (chunk) => { body += chunk; });
+    response.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        const latestVersion = data.tag_name.replace('v', '');
+        if (latestVersion !== currentVersion) {
+          // Stille pop-up met directe download knop
+          dialog.showMessageBox({
+            type: 'none', 
+            title: 'Update Available',
+            message: `A new version (${latestVersion}) is available!`,
+            buttons: ['Download Update', 'Later'],
+            noLink: true
+          }).then((result) => {
+            if (result.response === 0) {
+              // Open de nieuwste release pagina op GitHub
+              shell.openExternal('https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest');
+            }
+          });
+        } else if (manual) {
+          dialog.showMessageBox({
+            type: 'none', 
+            title: 'Up to Date',
+            message: 'You are running the latest version.',
+            buttons: ['OK']
+          });
+        }
+      } catch (e) {
+        if (manual) dialog.showErrorBox('Error', 'Could not check for updates.');
+      }
+    });
+  });
+  request.end();
 }
 
 app.whenReady().then(() => {
   createWindow();
-  try { createTray(); } catch (e) { console.log("Tray failed"); }
-});
+  tray = new Tray(path.join(__dirname, 'icon.png'));
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Show App', click: () => mainWindow.show() },
+    { label: 'Clear Cache & Reload', click: () => performHardRefresh() },
+    { type: 'separator' },
+    {
+      label: 'About',
+      click: () => {
+        const options = {
+          type: 'none', title: `About ${appName}`, message: appName, 
+          detail: `Version: ${currentVersion}\nAuthor: Aldon`,
+          buttons: ['Check for Updates', 'GitHub', 'Close'],
+          noLink: true
+        };
+        dialog.showMessageBox(mainWindow, options).then((result) => {
+          if (result.response === 0) checkUpdates(true);
+          else if (result.response === 1) shell.openExternal('https://github.com/ByAldon/Unofficial-Fluxer-Client');
+        });
+      }
+    },
+    { label: 'Quit', click: () => { app.isQuitting = true; app.quit(); } }
+  ]);
+  tray.setToolTip(appName);
+  tray.setContextMenu(contextMenu);
 
-app.on('window-all-closed', (e) => {
-  if (process.platform !== 'darwin') { }
+  setTimeout(() => checkUpdates(false), 3000);
 });

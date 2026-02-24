@@ -1,6 +1,6 @@
 {
   "name": "unofficial-fluxer-client",
-  "version": "1.0.0",
+  "version": "1.4.4",
   "description": "An unofficial desktop client for Fluxer",
   "main": "main.js",
   "author": "Aldon (https://github.com/ByAldon)",
@@ -28,11 +28,12 @@
       "artifactName": "Unofficial-Fluxer-Client-Setup.${ext}",
       "uninstallDisplayName": "Unofficial Fluxer Client",
       "license": "license.txt",
-      "include": "installer.nsh"
+      "include": "installer.nsh",
+      "deleteAppDataOnUninstall": true
     }
   },
   "devDependencies": {
     "electron": "^40.6.0",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^26.8.1"
   }
 }
