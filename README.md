@@ -1,8 +1,8 @@
 # Unofficial Fluxer Client
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=blue)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
-[![GitHub License](https://img.shields.io/github/license/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge)](https://github.com/ByAldon/Unofficial-Fluxer-Client/blob/main/license.txt)
-[![GitHub repo size](https://img.shields.io/github/repo-size/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge)](https://github.com/ByAldon/Unofficial-Fluxer-Client)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ByAldon/Unofficial-Fluxer-Client?label=Release&style=for-the-badge&color=blue)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
+[![GitHub License](https://img.shields.io/github/license/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=green)](https://github.com/ByAldon/Unofficial-Fluxer-Client/blob/main/license.txt)
+[![GitHub repo size](https://img.shields.io/github/repo-size/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=blue)](https://github.com/ByAldon/Unofficial-Fluxer-Client)
 
 An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel.
 
