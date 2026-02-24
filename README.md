@@ -1,6 +1,17 @@
 # Unofficial Fluxer Client
 
-An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows.
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=blue)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
+[![GitHub License](https://img.shields.io/github/license/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge)](https://github.com/ByAldon/Unofficial-Fluxer-Client/blob/main/license.txt)
+[![GitHub repo size](https://img.shields.io/github/repo-size/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge)](https://github.com/ByAldon/Unofficial-Fluxer-Client)
+
+An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel.
+
+---
+
+## 📥 Download Latest Version
+[![Download Unofficial Fluxer Client](https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=windows)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
+
+---
 
 ## 🚀 Version 1.4.4 Highlights
 
@@ -13,11 +24,11 @@ Since the initial release, the client has evolved from a simple wrapper to a ref
     - **Smart Refresh**: A dedicated network-refresh button is integrated into the UI (bottom-right) to resolve loading issues instantly without restarting the app.
     - **Tray Integration**: Access "Clear Cache & Reload" directly from the system tray for deep troubleshooting.
 - **🛡️ Enhanced Navigation**: External links are automatically intercepted and opened in your default system browser to keep your session secure and focused.
-- **🧼 Deep Cleanup Policy**: The uninstaller is optimized to purge all local site data, caches, and application-specific registry entries from `%AppData%` upon removal [cite: 2026-02-23].
+- **🧼 Deep Cleanup Policy**: The uninstaller is optimized to purge all local site data, caches, and application-specific registry keys from `%AppData%` upon removal [cite: 2026-02-23].
 
 ## 📥 Installation
 
-1. Navigate to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) section.
+1. Click the **Download** badge above or navigate to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) section.
 2. Download the latest **`Unofficial-Fluxer-Client-Setup.exe`**.
 3. Run the installer. If a previous version exists, it will perform a clean update automatically.
 
