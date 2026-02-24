@@ -1,8 +1,10 @@
-const { app, BrowserWindow, Tray, Menu, session, dialog, net, shell, powerMonitor, ipcMain } = require('electron');
+const { app, BrowserWindow, Tray, Menu, session, dialog, net, shell, ipcMain } = require('electron');
 const path = require('path');
 
 let mainWindow;
 let tray = null;
+let refreshInterval = null; // Variabele voor de Smart Refresh timer
+
 const currentVersion = '1.4.4'; 
 const appName = "Unofficial Fluxer Client";
 
@@ -16,6 +18,28 @@ function performHardRefresh() {
 }
 
 ipcMain.on('hard-refresh', () => { performHardRefresh(); });
+
+// Start de 5-minuten timer
+function startSmartRefresh() {
+  if (!refreshInterval) {
+    console.log('App minimized/hidden. Smart refresh timer started (5 min).');
+    refreshInterval = setInterval(() => {
+      if (mainWindow) {
+        console.log('Executing smart background refresh.');
+        mainWindow.webContents.reloadIgnoringCache();
+      }
+    }, 300000); // 300.000 ms = 5 minuten
+  }
+}
+
+// Stop de timer direct
+function stopSmartRefresh() {
+  if (refreshInterval) {
+    console.log('App active. Smart refresh timer stopped.');
+    clearInterval(refreshInterval);
+    refreshInterval = null;
+  }
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -35,6 +59,7 @@ function createWindow() {
     mainWindow.setTitle(appName); 
   });
 
+  // 1. Onderschep normale navigatie (klikken in hetzelfde venster)
   mainWindow.webContents.on('will-navigate', (event, url) => {
     const parsedUrl = new URL(url);
     if (parsedUrl.hostname !== 'web.fluxer.app' && parsedUrl.hostname !== 'fluxer.app') {
@@ -43,9 +68,25 @@ function createWindow() {
     }
   });
 
+  // 2. Onderschep chat-links en pop-ups (target="_blank")
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.hostname !== 'web.fluxer.app' && parsedUrl.hostname !== 'fluxer.app') {
+      shell.openExternal(url);
+      return { action: 'deny' }; // Voorkom dat Electron een leeg scherm opent
+    }
+    return { action: 'allow' };
+  });
+
   session.defaultSession.clearCache().then(() => {
     mainWindow.loadURL('https://web.fluxer.app/');
   });
+
+  // Koppel de Smart Refresh aan de venster-statussen
+  mainWindow.on('minimize', startSmartRefresh);
+  mainWindow.on('hide', startSmartRefresh);
+  mainWindow.on('restore', stopSmartRefresh);
+  mainWindow.on('show', stopSmartRefresh);
 
   mainWindow.on('close', (event) => {
     if (!app.isQuitting) {
