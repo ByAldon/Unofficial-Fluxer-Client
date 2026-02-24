@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unofficial Fluxer Client | The Desktop Experience</title>
+    <meta name="description" content="Get the unofficial Fluxer desktop app for Windows. A clean, quiet, and standalone experience.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #f3f3f3;
+            --text-muted: #a0a0a0;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .requirements {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Unofficial Fluxer Client</h1>
+        <p class="subtitle">Your favorite platform, now as a standalone desktop app.</p>
+
+        <div class="features">
+            <div class="feature-item">
+                <h3>🖥️ Standalone App</h3>
+                <p>Stop losing Fluxer between your dozens of browser tabs. Keep it in your taskbar.</p>
+            </div>
+            <div class="feature-item">
+                <h3>🤫 Silent Updates</h3>
+                <p>The app updates itself automatically without annoying Windows notification sounds.</p>
+            </div>
+            <div class="feature-item">
+                <h3>⚡ Always Fast</h3>
+                <p>Built-in tools to clear cache instantly and keep your experience running smoothly.</p>
+            </div>
+        </div>
+
+        <a href="https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest" class="download-btn">
+            Download for Windows
+        </a>
+        <p class="requirements">Free • Easy Install • Auto-updating</p>
+
+        <div class="footer">
+            <p>This is an unofficial, open-source client. All Fluxer branding and services belong to their respective owners. Not affiliated with Fluxer.</p>
+            <p>Developed with focus by <a href="https://github.com/ByAldon" target="_blank">Aldon</a> | <a href="https://github.com/ByAldon/Unofficial-Fluxer-Client" target="_blank">View Source Code</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
