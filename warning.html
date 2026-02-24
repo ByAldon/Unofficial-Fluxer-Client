@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice</title>
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-main: #f3f3f3;
+            --text-muted: #a0a0a0;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html, body {
+            height: 100%; 
+            overflow: hidden; 
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .drag-bar {
+            height: 30px;
+            width: 100%;
+            -webkit-app-region: drag;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.1);
+            flex-shrink: 0; 
+        }
+
+        .content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto; 
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 svg {
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .instruction-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .instruction-box svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .instruction-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+
+        .footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            flex-shrink: 0; 
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--primary-color);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            -webkit-app-region: no-drag;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="drag-bar">
+        Notice
+    </div>
+
+    <div class="content">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+                <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            Fluxer Server Stability
+        </h2>
+        <p>Fluxer is a relatively new service and their servers may occasionally experience instability or downtime.</p>
+        <p>If the client seems unresponsive or fails to load, it is usually due to Fluxer's servers and not a bug.</p>
+        
+        <div class="instruction-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+                <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            <p>If this happens, right-click the app in your system tray (bottom right) and select <strong>"Clear Cache & Reload"</strong>, or click the broken wifi icon on the bottom right of the client.</p>
+        </div>
+
+        <div class="footer">
+            <label class="checkbox-container">
+                <input type="checkbox" id="dontShowCb">
+                Don't show this message again
+            </label>
+            <button id="okBtn">Understood</button>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        document.getElementById('okBtn').addEventListener('click', () => {
+            const isChecked = document.getElementById('dontShowCb').checked;
+            ipcRenderer.send('close-server-warning', isChecked);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Unofficial Fluxer Client (UFC)
+# Unofficial Fluxer Client
 
 An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows.
 
@@ -9,10 +9,11 @@ An unofficial, high-performance desktop experience for Fluxer, built with Electr
 
 ---
 
-## 🚀 Version 1.4.5 Highlights
+## 🚀 Version 1.4.6 Highlights
 
 The client is constantly evolving to provide a seamless desktop experience:
 
+- **🛡️ Proactive Server Notices**: A custom, native-looking dialog to inform users about external server stability, reducing confusion during Fluxer downtime.
 - **🧠 Smart Background Refresh**: Automatically performs a silent cache refresh every 5 minutes when the app is minimized, ensuring your session is always fast when you return.
 - **🌐 Native Link Handling**: External links shared in chats are now fully intercepted and instantly open in your default Windows browser for security and ease of use.
 - **🔄 Intelligent Update System**: Automatically checks for the latest releases on startup. Direct download links are provided in notifications.
