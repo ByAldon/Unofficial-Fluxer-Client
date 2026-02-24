@@ -27,3 +27,7 @@ make/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Persoonlijke bestanden en notities (Niet naar GitHub sturen)
+notities.md
+notities.txt
