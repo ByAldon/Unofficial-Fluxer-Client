@@ -5,7 +5,8 @@ let mainWindow;
 let tray = null;
 let refreshInterval = null; // Variabele voor de Smart Refresh timer
 
-const currentVersion = '1.4.4'; 
+// Versie is hier netjes geüpdatet naar 1.4.5
+const currentVersion = '1.4.5'; 
 const appName = "Unofficial Fluxer Client";
 
 function performHardRefresh() {

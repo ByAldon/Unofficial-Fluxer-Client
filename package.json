@@ -1,6 +1,6 @@
 {
   "name": "unofficial-fluxer-client",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "An unofficial desktop client for Fluxer",
   "main": "main.js",
   "author": "Aldon (https://github.com/ByAldon)",
@@ -25,7 +25,7 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "Unofficial Fluxer Client",
-      "artifactName": "Unofficial-Fluxer-Client-Setup.${ext}",
+      "artifactName": "Unofficial-Fluxer-Client-Setup-${version}.${ext}",
       "uninstallDisplayName": "Unofficial Fluxer Client",
       "license": "license.txt",
       "include": "installer.nsh",
