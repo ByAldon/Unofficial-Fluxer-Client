@@ -1,4 +1,4 @@
-# Unofficial Fluxer Client
+# Unofficial Fluxer Client (UFC)
 
 An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows.
 
