@@ -1,6 +1,6 @@
 {
   "name": "fluxcap",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "An unofficial desktop client for Fluxer",
   "main": "main.js",
   "author": "Aldon (https://github.com/ByAldon)",

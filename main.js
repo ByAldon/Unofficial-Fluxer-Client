@@ -7,8 +7,7 @@ let warningWin;
 let tray = null;
 let refreshInterval = null; 
 
-// Versie officieel bijgewerkt naar 1.4.8
-const currentVersion = '1.4.8'; 
+const currentVersion = '1.4.9'; 
 const appName = "FluxCap";
 
 const configPath = path.join(app.getPath('userData'), 'fluxcap-config.json');

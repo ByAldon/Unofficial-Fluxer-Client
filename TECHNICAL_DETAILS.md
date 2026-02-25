@@ -1,13 +1,23 @@
-# Technical Details & Transparency Report (v1.4.8)
+# Technical Details & Transparency Report (v1.4.9)
 
-## 📦 Installer & Stability
-- [cite_start]**NSIS Engine**: Utilizes the NSIS engine via electron-builder for native Windows compatibility. [cite: 2, 3]
-- [cite_start]**Namespace Migration**: All system paths have been migrated to the `fluxcap` namespace to ensure a clean separation from legacy builds. 
+This document provides a detailed overview of the technical architecture and data handling of FluxCap [cite: 2026-02-22].
 
-## 🎨 User Experience
-- [cite_start]**Smart Refresh**: A custom "Hard Refresh" logic is integrated to allow full cache purges without restarting. [cite: 2, 3]
-- [cite_start]**Silent UI**: Update dialogs use `type: 'none'` to respect Windows focus assist settings. [cite: 2, 3]
+## 📦 Installer Logic & Stability
 
-## 🧼 System Integrity
-- [cite_start]**AppData Purge**: Uninstallation removes data from `%AppData%\fluxcap`. [cite: 2, 3]
-- [cite_start]**OS-Managed Files**: Does not interfere with Windows-generated files like `AppCompatFlags` or `Prefetch` to maintain system stability. [cite: 2, 3]
+- **Native Architecture**: The installer utilizes the NSIS (Nullsoft Scriptable Install System) engine via Electron-Builder [cite: 2026-02-22].
+- **Clean Update Path**: Configured to perform a clean update when a previous version is detected [cite: 2026-02-22].
+- **Silent UI Policy**: Dialog boxes are configured with `type: 'none'` to bypass default Windows system sounds [cite: 2026-02-22].
+
+## 🎨 UI & User Experience Enhancements
+
+- **Smart Refresh Integration**: A custom "Hard Refresh" button is injected via `preload.js` [cite: 2026-02-22].
+- **Crash Mitigation**: Version 1.4.9 includes a hardened `ipcMain` handler for the server stability notice to prevent application crashes [cite: 2026-02-22].
+- **External Link Handling**: A security layer monitors `will-navigate` events and redirects non-Fluxer domains to the default browser [cite: 2026-02-22].
+
+## 🧼 Residual File Policy & System Integrity
+
+- **AppData Isolation**: Application data is stored in `%AppData%\fluxcap` [cite: 2026-02-22].
+- **System Integrity**: This application does not attempt to modify OS-level files like `AppCompatFlags` or `Prefetch` files [cite: 2026-02-22].
+
+---
+*Technical Transparency Report - FluxCap Project [cite: 2026-02-22]*
