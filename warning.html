@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notice</title>
+    <title>Notice - FluxCap</title>
     <style>
         :root {
             --bg-color: #1e1e1e;
@@ -50,18 +50,27 @@
         }
 
         .content {
-            padding: 25px;
+            padding: 20px 25px; 
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             overflow-y: auto; 
+            
+            /* Hide scrollbar for IE, Edge and Firefox */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .content::-webkit-scrollbar {
+            display: none;
         }
 
         h2 {
             font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #fff;
             display: flex;
             align-items: center;
@@ -75,7 +84,7 @@
         p {
             font-size: 0.95rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.5;
             margin-bottom: 10px;
         }
 
@@ -152,24 +161,22 @@
 <body>
 
     <div class="drag-bar">
-        Notice
+        Notice - FluxCap
     </div>
 
     <div class="content">
         <h2>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="1" y1="1" x2="23" y2="23"></line>
-                <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
-                <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
-                <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
-                <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
-                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
-            Fluxer Server Stability
+            FluxCap & Server Stability
         </h2>
-        <p>Fluxer is a relatively new service and their servers may occasionally experience instability or downtime.</p>
-        <p>If the client seems unresponsive or fails to load, it is usually due to Fluxer's servers and not a bug.</p>
+        
+        <p><strong>FluxCap</strong> is an unofficial, community-driven client. We are not affiliated with or endorsed by the official Fluxer application.</p>
+        
+        <p>Fluxer is a relatively new service and their servers may occasionally experience downtime. If the client fails to load or becomes unresponsive, it is usually due to Fluxer's servers and not a bug.</p>
         
         <div class="instruction-box">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -183,6 +190,8 @@
             </svg>
             <p>If this happens, right-click the app in your system tray (bottom right) and select <strong>"Clear Cache & Reload"</strong>, or click the broken wifi icon on the bottom right of the client.</p>
         </div>
+
+        <p><em>Please do not report network or server-related issues to the FluxCap GitHub repository.</em></p>
 
         <div class="footer">
             <label class="checkbox-container">
