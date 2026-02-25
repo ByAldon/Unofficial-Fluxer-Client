@@ -2,16 +2,16 @@ module.exports = {
   packagerConfig: {
     asar: true,
     icon: './icon',
-    name: "Unofficial Fluxer Client"
+    name: "FluxCap"
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        name: 'unofficial_fluxer_client',
-        authors: 'Timothy',
-        description: 'Unofficial Fluxer Client'
+        name: 'fluxcap',
+        authors: 'Aldon',
+        description: 'An unofficial client for Fluxer'
       },
     }
   ],

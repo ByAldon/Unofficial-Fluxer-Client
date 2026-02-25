@@ -1,6 +1,6 @@
 {
-  "name": "unofficial-fluxer-client",
-  "version": "1.4.6",
+  "name": "fluxcap",
+  "version": "1.4.8",
   "description": "An unofficial desktop client for Fluxer",
   "main": "main.js",
   "author": "Aldon (https://github.com/ByAldon)",
@@ -10,8 +10,8 @@
     "build": "electron-builder --win"
   },
   "build": {
-    "appId": "com.aldon.unofficialfluxer",
-    "productName": "Unofficial Fluxer Client",
+    "appId": "com.aldon.fluxcap",
+    "productName": "FluxCap",
     "directories": {
       "output": "dist"
     },
@@ -24,9 +24,9 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Unofficial Fluxer Client",
-      "artifactName": "Unofficial-Fluxer-Client-Setup-${version}.${ext}",
-      "uninstallDisplayName": "Unofficial Fluxer Client",
+      "shortcutName": "FluxCap",
+      "artifactName": "FluxCap-Setup-${version}.${ext}",
+      "uninstallDisplayName": "FluxCap",
       "license": "license.txt",
       "include": "installer.nsh",
       "deleteAppDataOnUninstall": true

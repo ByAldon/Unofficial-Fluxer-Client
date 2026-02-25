@@ -6,11 +6,11 @@ let mainWindow;
 let tray = null;
 let refreshInterval = null; 
 
-// Versie bijgewerkt naar 1.4.6
-const currentVersion = '1.4.6'; 
-const appName = "Unofficial Fluxer Client";
+// Version updated to 1.4.8 to avoid cache conflicts with 1.4.7
+const currentVersion = '1.4.8'; 
+const appName = "FluxCap";
 
-const configPath = path.join(app.getPath('userData'), 'fluxer-client-config.json');
+const configPath = path.join(app.getPath('userData'), 'fluxcap-config.json');
 
 function getConfig() {
   try {
@@ -67,7 +67,7 @@ function createWindow() {
     icon: path.join(__dirname, 'icon.png'), backgroundColor: '#1e1e1e',
     autoHideMenuBar: true, 
     webPreferences: {
-      nodeIntegration: true, // Nodig voor de custom modal communicatie
+      nodeIntegration: true, // Needed for custom modal communication
       contextIsolation: false,
       sandbox: false,
       preload: path.join(__dirname, 'preload.js')

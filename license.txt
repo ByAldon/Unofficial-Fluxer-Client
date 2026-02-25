@@ -1,8 +1,8 @@
-Unofficial Fluxer Client - End User License Agreement
+FluxCap - End User License Agreement
 
 Please read the following terms carefully before installing.
 
-1. Unofficial Status: This is an unofficial, community-driven client. 
+1. Unofficial Status: FluxCap is an unofficial, community-driven client. 
    The creator (Aldon, https://github.com/ByAldon) is not affiliated, 
    associated, authorized, endorsed by, or in any way officially 
    connected with the official Fluxer application or its developers.

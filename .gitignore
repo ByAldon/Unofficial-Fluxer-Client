@@ -28,6 +28,6 @@ make/
 ehthumbs.db
 Thumbs.db
 
-# Persoonlijke bestanden en notities (Niet naar GitHub sturen)
+# Personal files and notes (Do not commit to GitHub)
 notities.md
 notities.txt

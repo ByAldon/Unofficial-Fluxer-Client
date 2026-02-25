@@ -3,7 +3,7 @@
 !macroend
 
 !macro customUnInstall
-  RMDir /r "$APPDATA\unofficial-fluxer-client"
-  RMDir /r "$LOCALAPPDATA\unofficial-fluxer-client-updater"
-  DeleteRegKey HKCU "Software\unofficial-fluxer-client"
+  RMDir /r "$APPDATA\fluxcap"
+  RMDir /r "$LOCALAPPDATA\fluxcap-updater"
+  DeleteRegKey HKCU "Software\fluxcap"
 !macroend
