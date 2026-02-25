@@ -37,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 15px 50px;
             background-color: var(--surface-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -52,8 +52,10 @@
             text-decoration: none;
         }
 
-        .logo-container svg {
-            color: var(--primary-color);
+        .logo-container img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
         }
 
         .nav-links a {
@@ -174,7 +176,7 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
@@ -190,9 +192,12 @@
         }
 
         .disclaimer {
-            margin-top: 10px;
+            margin-top: 15px;
             font-size: 0.8rem;
             opacity: 0.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Responsive */
@@ -212,11 +217,7 @@
 
     <nav>
         <a href="#" class="logo-container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                <line x1="12" y1="9" x2="12" y2="13"></line>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
+            <img src="https://raw.githubusercontent.com/ByAldon/FluxCap/main/icon.png" alt="FluxCap Logo">
             FluxCap
         </a>
         <div class="nav-links">
@@ -275,9 +276,9 @@
 
     <footer>
         <p>&copy; 2026 Aldon. Released under the <a href="https://github.com/ByAldon/FluxCap/blob/main/LICENSE" target="_blank">MIT License</a>.</p>
-        <p class="disclaimer">
-            <strong>Disclaimer:</strong> FluxCap is a third-party, independent project. It is not affiliated with, endorsed by, sponsored by, or formally associated with the official Fluxer project or its development team.
-        </p>
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> FluxCap is a third-party, independent project. It is not affiliated with, endorsed by, sponsored by, or formally associated with the official Fluxer project or its development team.</p>
+        </div>
     </footer>
 
 </body>
