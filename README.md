@@ -2,6 +2,7 @@
 
 An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native Windows feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows and fewer distractions.
 
+[![GitHub Release](https://img.shields.io/github/v/release/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=success)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
 [![Download Unofficial Fluxer Client](https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=windows)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
