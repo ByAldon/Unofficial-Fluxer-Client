@@ -4,34 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FluxCap - Desktop Client for Fluxer</title>
+    <meta name="description" content="An unofficial, community-driven desktop client for the Fluxer network.">
     <style>
-        :root { --bg: #121212; --surf: #1e1e1e; --text: #f3f3f3; --prim: #3b82f6; }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
-        nav { padding: 20px; background: var(--surf); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
-        .logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.2rem; }
-        .logo img { width: 32px; height: 32px; }
-        .hero { padding: 100px 20px; }
-        .btn { background: var(--prim); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
-        footer { padding: 40px; font-size: 0.8rem; color: #888; border-top: 1px solid #333; }
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --text-main: #f3f3f3;
+            --text-muted: #a0a0a0;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --border-color: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-container img { width: 32px; height: 32px; }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: #fff;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover { transform: translateY(-2px); background-color: var(--primary-hover); }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
     </style>
 </head>
 <body>
+
     <nav>
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/ByAldon/FluxCap/main/icon.png" alt="FluxCap">
+        <a href="#" class="logo-container">
+            <img src="https://raw.githubusercontent.com/ByAldon/FluxCap/main/icon.png" alt="FluxCap Logo">
             FluxCap
-        </div>
+        </a>
         <div>
             <a href="https://github.com/ByAldon/FluxCap" style="color: white; text-decoration: none;">GitHub</a>
         </div>
     </nav>
+
     <div class="hero">
         <h1>Fluxer, but on your Desktop.</h1>
-        <p>Experience a faster, dedicated client for the Fluxer network.</p>
-        <a href="https://github.com/ByAldon/FluxCap/releases/latest" class="btn">Download v1.4.8 for Windows</a>
+        <p>A fast, unofficial, and stable Windows client for the Fluxer network [cite: 2026-02-22].</p>
+        <a href="https://github.com/ByAldon/FluxCap/releases/latest" class="btn">
+            Download v1.4.9 for Windows
+        </a>
     </div>
+
     <footer>
-        <p>&copy; 2026 Aldon. Unofficial client. Not affiliated with Fluxer. [cite: 2, 3]</p>
+        <p>&copy; 2026 Aldon. Released under the MIT License [cite: 2026-02-22].</p>
+        <p>Disclaimer: FluxCap is a third-party project and not affiliated with Fluxer [cite: 2026-02-22].</p>
     </footer>
+
 </body>
 </html>
