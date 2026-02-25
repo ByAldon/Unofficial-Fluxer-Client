@@ -140,7 +140,7 @@ ipcMain.on('close-server-warning', (event, dontShowAgain) => {
 });
 
 function checkUpdates(manual = false) {
-  const request = net.request('https://api.github.com/repos/ByAldon/Unofficial-Fluxer-Client/releases/latest');
+  const request = net.request('https://api.github.com/repos/ByAldon/FluxCap/releases/latest');
   request.on('response', (response) => {
     let body = '';
     response.on('data', (chunk) => { body += chunk; });
@@ -156,7 +156,7 @@ function checkUpdates(manual = false) {
             noLink: true
           }).then((result) => {
             if (result.response === 0) {
-              shell.openExternal('https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest');
+              shell.openExternal('https://github.com/ByAldon/FluxCap/releases/latest');
             }
           });
         } else if (manual) {
@@ -194,7 +194,7 @@ app.whenReady().then(() => {
         };
         dialog.showMessageBox(mainWindow, options).then((result) => {
           if (result.response === 0) checkUpdates(true);
-          else if (result.response === 1) shell.openExternal('https://github.com/ByAldon/Unofficial-Fluxer-Client');
+          else if (result.response === 1) shell.openExternal('https://github.com/ByAldon/FluxCap');
         });
       }
     },

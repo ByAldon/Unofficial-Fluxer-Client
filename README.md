@@ -44,7 +44,7 @@
 
 ### Standard Installation (Recommended)
 
-1. Go to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) page.
+1. Go to the [Releases](https://github.com/ByAldon/FluxCap/releases) page.
 2. Download the latest `FluxCap-Setup-1.4.8.exe` installer.
 3. Run the installer and follow the prompts.
 
@@ -54,11 +54,11 @@ To get a development environment running or to build the application yourself, f
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ByAldon/Unofficial-Fluxer-Client.git](https://github.com/ByAldon/Unofficial-Fluxer-Client.git)
+    git clone [https://github.com/ByAldon/FluxCap.git](https://github.com/ByAldon/FluxCap.git)
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd Unofficial-Fluxer-Client
+    cd FluxCap
     ```
 3.  **Install the dependencies:**
     ```bash
@@ -84,7 +84,7 @@ We recommend using **Revo Uninstaller** to ensure all leftover registry items an
 3.  **Scan for Leftovers:** Use the "Moderate" or "Advanced" scan to find and safely remove remaining files and registry entries.
 4.  **Install the New Update:** Once your system is clean, download and install the latest release.
 
-For detailed instructions, please refer to our [Clean Installation Guide in the Wiki](https://github.com/ByAldon/Unofficial-Fluxer-Client/wiki/Clean-Installation-Guide) or the [Revo Uninstaller Support Page](https://www.revouninstaller.com/support/#howto).
+For detailed instructions, please refer to our [Clean Installation Guide in the Wiki](https://github.com/ByAldon/FluxCap/wiki/Clean-Installation-Guide) or the [Revo Uninstaller Support Page](https://www.revouninstaller.com/support/#howto).
 
 ---
 
