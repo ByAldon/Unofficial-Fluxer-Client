@@ -6,8 +6,8 @@ let mainWindow;
 let tray = null;
 let refreshInterval = null; 
 
-// Versie bijgewerkt naar 1.4.7
-const currentVersion = '1.4.7'; 
+// Versie bijgewerkt naar 1.4.6
+const currentVersion = '1.4.6'; 
 const appName = "Unofficial Fluxer Client";
 
 const configPath = path.join(app.getPath('userData'), 'fluxer-client-config.json');
@@ -67,7 +67,7 @@ function createWindow() {
     icon: path.join(__dirname, 'icon.png'), backgroundColor: '#1e1e1e',
     autoHideMenuBar: true, 
     webPreferences: {
-      nodeIntegration: true, 
+      nodeIntegration: true, // Nodig voor de custom modal communicatie
       contextIsolation: false,
       sandbox: false,
       preload: path.join(__dirname, 'preload.js')
@@ -200,18 +200,7 @@ app.whenReady().then(() => {
     },
     { label: 'Quit', click: () => { app.isQuitting = true; app.quit(); } }
   ]);
-
   tray.setToolTip(appName);
   tray.setContextMenu(contextMenu);
-
-  // NIEUW: Toon de app bij een linker muisklik op het tray icoon
-  tray.on('click', () => {
-    if (mainWindow) {
-      mainWindow.show();
-      if (mainWindow.isMinimized()) mainWindow.restore();
-      mainWindow.focus();
-    }
-  });
-
   setTimeout(() => checkUpdates(false), 3000);
 });
