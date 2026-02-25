@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ FluxCap
+# ⚡ FluxCap - The Unofficial Fluxer Client!
 
 > **An unofficial, community-driven, and highly customizable desktop client for the Fluxer network.**
 
