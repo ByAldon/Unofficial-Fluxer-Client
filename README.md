@@ -1,63 +1,65 @@
-# 🚀 Unofficial Fluxer Client
+# FluxCap - An unofficial client for Fluxer
 
-An unofficial, high-performance desktop experience for Fluxer, built with Electron for maximum stability and a native Windows feel. This client bridges the gap between the web and the desktop, offering features specifically designed for professional workflows and fewer distractions.
+FluxCap is an unofficial, community-driven client for the Fluxer instant messaging and VoIP platform. It aims to provide a lightweight and highly customizable interface while maintaining full compatibility with the core Fluxer network.
 
-[![GitHub Release](https://img.shields.io/github/v/release/ByAldon/Unofficial-Fluxer-Client?style=for-the-badge&color=success)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
-[![Download Unofficial Fluxer Client](https://img.shields.io/badge/Download-Latest_Release-blue?style=for-the-badge&logo=windows)](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases/latest)
-[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+## Features
 
----
+* **Seamless Integration:** Connects directly to any self-hosted or official Fluxer instance.
+* **Customizable Interface:** Tailor the look and feel of your messaging experience with built-in themes.
+* **Optimized Performance:** Built for speed, responsiveness, and a low memory footprint.
+* **Open Source:** Fully transparent architecture and open for community contributions.
 
-## ✨ Key Features
+## Installation
 
-This client goes beyond simply wrapping a website. It actively enhances your experience with custom quality-of-life improvements:
+### Prerequisites
 
-- **🖥️ Standalone Workspace**: Stop losing your Fluxer session between dozens of open browser tabs. Keep it neatly organized in your taskbar.
-- **🖱️ Instant Tray Access**: Just like Discord and other native apps, a simple **left-click** on the system tray icon instantly restores and focuses the window.
-- **🧠 Smart Background Refresh**: Never come back to a stale or disconnected session. When minimized or hidden, the app performs a silent cache refresh every 5 minutes.
-- **🌐 Native Link Handling**: Security first. External links shared in chats are intercepted and instantly opened in your default Windows browser (Chrome, Edge, Firefox, etc.) instead of awkward in-app popups.
-- **🛡️ Proactive Server Notices**: Custom, native-looking dialogs inform you about external Fluxer server instability, so you always know whether it's an app bug or a server issue.
-- **🤫 Silent Auto-Updates**: The app checks for the latest releases on startup and handles updates cleanly without intrusive Windows alert sounds.
+Ensure you have Node.js (version 18 or higher) and npm installed on your system.
 
----
+### Build from Source
 
-## 📥 Installation
+1.  Clone the repository:
+    `git clone https://github.com/ByAldon/Unofficial-Fluxer-Client.git`
+2.  Navigate to the directory:
+    `cd Unofficial-Fluxer-Client`
+3.  Install dependencies:
+    `npm install`
+4.  Start the application in development mode:
+    `npm run dev`
 
-1. Navigate to the [Releases](https://github.com/ByAldon/Unofficial-Fluxer-Client/releases) section or click the Download badge above.
-2. Download the latest `Unofficial-Fluxer-Client-Setup-x.x.x.exe` file.
-3. Run the installer. 
-4. *Upgrading?* The installer will automatically detect your current version and perform a clean update without losing your settings.
+### Clean Installation (Recommended for Updates)
 
----
+When updating to a new version of the application, it is highly recommended to perform a clean installation to ensure that no residual files or outdated configurations interfere with the new update.
 
-## 🛠️ Usage & System Tray Options
+To completely remove the previous installation, we recommend using **Revo Uninstaller**.
 
-Once the app is running, it will reside in your Windows system tray (bottom right). 
-- **Left-Click**: Instantly show or restore the app window.
-- **Right-Click**: Opens the context menu with the following options:
-  - `Show App`: Restores the window.
-  - `Clear Cache & Reload`: Instantly performs a hard refresh and clears local session data. Use this if the app feels sluggish or if Fluxer servers are having hiccups.
-  - `About`: Check your current version and manually check for updates.
+1.  **Download:** Get [Revo Uninstaller Free](https://www.revouninstaller.com/products/revo-uninstaller-free/) and install it on your system.
+2.  **Uninstall:** Open Revo Uninstaller, locate our application, and click **Uninstall**.
+3.  **Scan for Leftovers:** Use the "Moderate" or "Advanced" scan feature to find and remove remaining files, folders, and registry entries.
+4.  **Install New Version:** Once clean, download and install the latest release.
 
----
+For a more detailed walkthrough, please visit our [Clean Installation Guide](https://github.com/ByAldon/Unofficial-Fluxer-Client/wiki/Clean-Installation-Guide) on the wiki, or check the [Revo Uninstaller Guidelines](https://www.revouninstaller.com/support/#howto).
 
-## ⌨️ Development & Build Instructions
+## Usage
 
-If you want to compile the project yourself, ensure you have [Node.js](https://nodejs.org/) installed, then run the following commands:
+1.  Launch the FluxCap application on your device.
+2.  On the initial login screen, enter the URL of your target Fluxer instance (e.g., `https://fluxer.app` or your private self-hosted domain).
+3.  Enter your standard Fluxer credentials to authenticate.
+4.  You are now ready to chat, join communities, and participate in voice channels.
 
-```bash
-# Clone the repository
-git clone [https://github.com/ByAldon/Unofficial-Fluxer-Client.git](https://github.com/ByAldon/Unofficial-Fluxer-Client.git)
+## Contributing
 
-# Navigate into the directory
-cd Unofficial-Fluxer-Client
+Contributions, issues, and feature requests are always welcome. 
 
-# Install the required dependencies
-npm install
+1.  Fork the project repository.
+2.  Create your feature branch: `git checkout -b feature/AmazingFeature`
+3.  Commit your changes: `git commit -m 'Add some AmazingFeature'`
+4.  Push to the branch: `git push origin feature/AmazingFeature`
+5.  Open a Pull Request for review.
 
-# Run the application in development mode
-npm start
+## Disclaimer
 
-# Compile and build the Windows executable (.exe)
-npm run build
+FluxCap is an independent project and is not affiliated with, endorsed by, or sponsored by the official Fluxer project. "Fluxer" is a trademark of its respective owners.
+
+## License
+
+This project is licensed under the AGPLv3 License. See the LICENSE file for more information.
