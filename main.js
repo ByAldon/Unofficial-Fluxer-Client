@@ -3,10 +3,11 @@ const path = require('path');
 const fs = require('fs');
 
 let mainWindow;
+let warningWin; 
 let tray = null;
 let refreshInterval = null; 
 
-// Version updated to 1.4.8 to avoid cache conflicts with 1.4.7
+// Versie officieel bijgewerkt naar 1.4.8
 const currentVersion = '1.4.8'; 
 const appName = "FluxCap";
 
@@ -25,6 +26,10 @@ function getConfig() {
 
 function saveConfig(config) {
   try {
+    const dir = path.dirname(configPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
     fs.writeFileSync(configPath, JSON.stringify(config), 'utf8');
   } catch (error) {
     console.error('Error saving config:', error);
@@ -44,7 +49,6 @@ ipcMain.on('hard-refresh', () => { performHardRefresh(); });
 
 function startSmartRefresh() {
   if (!refreshInterval) {
-    console.log('App minimized. Smart refresh started (5 min).');
     refreshInterval = setInterval(() => {
       if (mainWindow) {
         mainWindow.webContents.reloadIgnoringCache();
@@ -55,7 +59,6 @@ function startSmartRefresh() {
 
 function stopSmartRefresh() {
   if (refreshInterval) {
-    console.log('App active. Smart refresh stopped.');
     clearInterval(refreshInterval);
     refreshInterval = null;
   }
@@ -67,7 +70,7 @@ function createWindow() {
     icon: path.join(__dirname, 'icon.png'), backgroundColor: '#1e1e1e',
     autoHideMenuBar: true, 
     webPreferences: {
-      nodeIntegration: true, // Needed for custom modal communication
+      nodeIntegration: true,
       contextIsolation: false,
       sandbox: false,
       preload: path.join(__dirname, 'preload.js')
@@ -103,9 +106,7 @@ function createWindow() {
   });
 
   mainWindow.on('minimize', startSmartRefresh);
-  mainWindow.on('hide', startSmartRefresh);
   mainWindow.on('restore', stopSmartRefresh);
-  mainWindow.on('show', stopSmartRefresh);
 
   mainWindow.on('close', (event) => {
     if (!app.isQuitting) {
@@ -119,13 +120,20 @@ function createWindow() {
 function showServerWarning() {
   const config = getConfig();
   if (!config.hideServerWarning && mainWindow) {
-    let warningWin = new BrowserWindow({
-      parent: mainWindow, modal: true, width: 540, height: 460,
-      frame: false, resizable: false, backgroundColor: '#1e1e1e',
-      webPreferences: { nodeIntegration: true, contextIsolation: false }
+    warningWin = new BrowserWindow({
+      parent: mainWindow, 
+      modal: true, 
+      width: 540, 
+      height: 460,
+      frame: false, 
+      resizable: false, 
+      backgroundColor: '#1e1e1e',
+      webPreferences: { 
+        nodeIntegration: true, 
+        contextIsolation: false 
+      }
     });
     warningWin.loadFile('warning.html');
-    warningWin.on('closed', () => { warningWin = null; });
   }
 }
 
@@ -135,8 +143,11 @@ ipcMain.on('close-server-warning', (event, dontShowAgain) => {
     config.hideServerWarning = true;
     saveConfig(config);
   }
-  const win = BrowserWindow.fromWebContents(event.sender);
-  if (win) win.close();
+
+  if (warningWin) {
+    warningWin.destroy(); 
+    warningWin = null;
+  }
 });
 
 function checkUpdates(manual = false) {
