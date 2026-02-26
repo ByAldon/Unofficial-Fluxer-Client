@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FluxCap - Desktop Client for Fluxer</title>
-    <meta name="description" content="An unofficial, community-driven desktop client for the Fluxer network.">
+    <meta name="description" content="An unofficial, community-driven desktop client for the Fluxer network. Experience Fluxer directly on your Windows desktop.">
     <style>
         :root {
             --bg-color: #121212;
@@ -16,7 +16,12 @@
             --border-color: #333;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
         body {
             background-color: var(--bg-color);
@@ -27,6 +32,7 @@
             min-height: 100vh;
         }
 
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -46,8 +52,25 @@
             text-decoration: none;
         }
 
-        .logo-container img { width: 32px; height: 32px; }
+        .logo-container img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
 
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
         .hero {
             flex: 1;
             display: flex;
@@ -58,7 +81,27 @@
             padding: 80px 20px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
         .btn {
             display: inline-flex;
@@ -69,19 +112,104 @@
             font-weight: 600;
             border-radius: 8px;
             text-decoration: none;
-            background-color: var(--primary-color);
-            color: #fff;
-            transition: transform 0.2s;
+            transition: all 0.2s ease;
         }
 
-        .btn:hover { transform: translateY(-2px); background-color: var(--primary-hover); }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
 
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--surface-color);
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .feature-card {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card svg {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -92,22 +220,65 @@
             <img src="https://raw.githubusercontent.com/ByAldon/FluxCap/main/icon.png" alt="FluxCap Logo">
             FluxCap
         </a>
-        <div>
-            <a href="https://github.com/ByAldon/FluxCap" style="color: white; text-decoration: none;">GitHub</a>
+        <div class="nav-links">
+            <a href="https://github.com/ByAldon/FluxCap" target="_blank">GitHub</a>
+            <a href="https://github.com/ByAldon/FluxCap/releases" target="_blank">Releases</a>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>Fluxer, but on your Desktop.</h1>
-        <p>A fast, unofficial, and stable Windows client for the Fluxer network [cite: 2026-02-22].</p>
-        <a href="https://github.com/ByAldon/FluxCap/releases/latest" class="btn">
-            Download v1.4.9 for Windows
-        </a>
+        <h1>Experience Fluxer on your Desktop.</h1>
+        <p>A fast, unofficial, and community-driven Windows client for the Fluxer network. Enjoy a native app experience, smart caching, and seamless background updates.</p>
+        
+        <div class="cta-buttons">
+            <a href="https://github.com/ByAldon/FluxCap/releases/latest" class="btn btn-primary" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download v1.5.0
+            </a>
+            <a href="https://github.com/ByAldon/FluxCap" class="btn btn-secondary" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                View Source
+            </a>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <h3>Optimized Performance</h3>
+            <p>Built with Electron, FluxCap offers smart background refreshing and cache management to keep your memory usage low.</p>
+        </div>
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.5 2v6h-6M2.13 15.57a9 9 0 1 0 3.84-10.36L2 8"></path>
+            </svg>
+            <h3>Auto-Updates</h3>
+            <p>Never worry about downloading new versions. FluxCap securely checks for updates and installs them automatically.</p>
+        </div>
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <h3>Native Experience</h3>
+            <p>Enjoy a system tray icon, custom window framing, and secure handling of external links straight to your default browser.</p>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Aldon. Released under the MIT License [cite: 2026-02-22].</p>
-        <p>Disclaimer: FluxCap is a third-party project and not affiliated with Fluxer [cite: 2026-02-22].</p>
+        <p>&copy; 2026 Aldon. Released under the <a href="https://github.com/ByAldon/FluxCap/blob/main/LICENSE" target="_blank">MIT License</a>.</p>
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> FluxCap is a third-party, independent project. It is not affiliated with, endorsed by, sponsored by, or formally associated with the official Fluxer project or its development team.</p>
+        </div>
     </footer>
 
 </body>
