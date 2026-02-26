@@ -1,6 +1,6 @@
 {
   "name": "fluxcap",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "description": "An unofficial desktop client for Fluxer",
   "main": "main.js",
   "author": "Aldon (https://github.com/ByAldon)",
@@ -32,6 +32,7 @@
       "deleteAppDataOnUninstall": true
     }
   },
+  "dependencies": {},
   "devDependencies": {
     "electron": "^40.6.0",
     "electron-builder": "^26.8.1"

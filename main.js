@@ -7,7 +7,8 @@ let warningWin;
 let tray = null;
 let refreshInterval = null; 
 
-const currentVersion = '1.4.9'; 
+// Version officially updated to 1.5.0
+const currentVersion = '1.5.0'; 
 const appName = "FluxCap";
 
 const configPath = path.join(app.getPath('userData'), 'fluxcap-config.json');
@@ -210,6 +211,14 @@ app.whenReady().then(() => {
     },
     { label: 'Quit', click: () => { app.isQuitting = true; app.quit(); } }
   ]);
+
+  // Discord-style behavior: Show app on left-click [cite: 2026-02-22]
+  tray.on('click', () => {
+    if (mainWindow) {
+      mainWindow.show();
+    }
+  });
+
   tray.setToolTip(appName);
   tray.setContextMenu(contextMenu);
   setTimeout(() => checkUpdates(false), 3000);
